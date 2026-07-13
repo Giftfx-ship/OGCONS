@@ -28,42 +28,98 @@ const STUDENTS = [
     "25012",
     "25013",
     "25015",
-    "25023",
-    "25028",
     "25016",
-    "25027"
-    // Add more students as needed
+    "25023",
+    "25027",
+    "25028"
 ];
 
 // GROUP PRESENTATIONS
 const GROUPS = [
     {
         id: "A",
-        topic: "STU - "Kidney Failure & Nasogastric Tubing.",
+        topic: "Kidney Failure & Nasogastric Tubing",
         members: [
             "Salaudeen Mariam",
             "Adama Peace",
             "Ajibade Lydia",
             "Omotosho Doyinsola"
         ],
-        summary: "STU - Group A – Clinical Demonstration & Case Presentation,Group A presented on kidney failure, discussing its causes, clinical features, nursing management, and patient care. The group also demonstrated the nasogastric (NG) tube procedure, highlighting proper insertion techniques, feeding, medication administration, and essential nursing considerations to ensure patient safety.",
+        summary: "📋 GROUP A – CLINICAL DEMONSTRATION & CASE PRESENTATION\n\n" +
+                 "Group A delivered an outstanding and comprehensive presentation on Kidney Failure and Nasogastric Tubing, demonstrating exceptional clinical knowledge and practical nursing skills. The presentation was divided into two main sections: theoretical understanding and practical demonstration.\n\n" +
+                 "🔬 KIDNEY FAILURE PRESENTATION:\n" +
+                 "The group began by providing an in-depth exploration of kidney failure, covering its pathophysiology, etiology, and classification into acute and chronic forms. They discussed the common causes including hypertension, diabetes mellitus, glomerulonephritis, and polycystic kidney disease. The clinical features were thoroughly explained, highlighting early warning signs such as fatigue, edema, changes in urine output, and later complications including electrolyte imbalances, metabolic acidosis, and uremic syndrome.\n\n" +
+                 "The nursing management section was particularly impressive, with the group outlining comprehensive care plans including:\n" +
+                 "• Monitoring vital signs and fluid balance\n" +
+                 "• Assessing for signs of fluid overload or dehydration\n" +
+                 "• Implementing dietary modifications (low protein, low potassium, low sodium)\n" +
+                 "• Administering prescribed medications including antihypertensives and diuretics\n" +
+                 "• Preparing patients for dialysis or kidney transplant when indicated\n" +
+                 "• Providing patient education on lifestyle modifications and self-care\n" +
+                 "• Offering psychological support and coping strategies\n\n" +
+                 "🩺 NASOGASTRIC (NG) TUBE PROCEDURE DEMONSTRATION:\n" +
+                 "The group then transitioned to a practical demonstration of NG tube insertion and management. They meticulously explained the step-by-step procedure including:\n" +
+                 "• Patient assessment and preparation (explaining the procedure, obtaining consent)\n" +
+                 "• Equipment preparation (NG tube, lubricant, syringe, stethoscope, tape)\n" +
+                 "• Proper positioning of the patient (sitting upright or semi-Fowler's position)\n" +
+                 "• Accurate measurement of tube length (from nose to ear to xiphoid process)\n" +
+                 "• Gentle insertion technique with patient cooperation\n" +
+                 "• Confirmation of tube placement (aspiration of gastric contents, auscultation, pH testing)\n" +
+                 "• Securing the tube and initiating feeding or medication administration\n" +
+                 "• Ongoing care and monitoring for complications\n\n" +
+                 "The group emphasized crucial nursing considerations including patient comfort, dignity, and safety throughout the procedure. They also highlighted potential complications such as aspiration, tube displacement, and infection, with strategies for prevention and management.\n\n" +
+                 "The presentation was well-received, demonstrating the group's thorough understanding of both theoretical concepts and practical nursing skills essential for quality patient care.",
         driveLink: "https://drive.google.com/drive/folders/15ZYs13nZg2pcGuApFMcy4zzSctcUXwbX"
     },
     {
         id: "B",
-        topic: "STU - Gastric Lavage & Heart Failure.",
+        topic: "Gastric Lavage & Heart Failure",
         members: [
             "Famous Esther",
             "Abiona Tomi Olorunnisomo",
             "Ayobami Olunike Adeniran",
             "Folasayo Ojo"
         ],
-        summary: "STU - "Clinical Demonstration & Case Presentation,Group B presented on heart failure, covering its causes, signs and symptoms, nursing diagnoses, and appropriate nursing management. The group also demonstrated gastric lavage, emphasizing the correct procedure, indications, precautions, and the nurse’s role in ensuring safe and effective patient care.",
+        summary: "📋 GROUP B – CLINICAL DEMONSTRATION & CASE PRESENTATION\n\n" +
+                 "Group B delivered an exceptional and well-structured presentation on Heart Failure and Gastric Lavage, showcasing their comprehensive understanding of these critical nursing topics. The presentation was both educational and clinically relevant.\n\n" +
+                 "❤️ HEART FAILURE PRESENTATION:\n" +
+                 "The group provided an extensive overview of heart failure, beginning with its definition as a progressive condition where the heart cannot pump enough blood to meet the body's demands. They discussed the two main types: systolic heart failure (reduced ejection fraction) and diastolic heart failure (preserved ejection fraction).\n\n" +
+                 "The etiology section covered common causes including:\n" +
+                 "• Coronary artery disease and myocardial infarction\n" +
+                 "• Hypertension and valvular heart disease\n" +
+                 "• Cardiomyopathy and congenital heart defects\n" +
+                 "• Diabetes mellitus and thyroid disorders\n\n" +
+                 "Clinical manifestations were thoroughly explained, including:\n" +
+                 "• Dyspnea on exertion and orthopnea\n" +
+                 "• Paroxysmal nocturnal dyspnea\n" +
+                 "• Peripheral edema and weight gain\n" +
+                 "• Fatigue and exercise intolerance\n" +
+                 "• Jugular venous distension and hepatomegaly\n" +
+                 "• Pulmonary crackles and S3 gallop\n\n" +
+                 "The nursing management section was comprehensive, covering:\n" +
+                 "• Assessment of vital signs, weight, and fluid status\n" +
+                 "• Monitoring for signs of worsening heart failure\n" +
+                 "• Administering medications including ACE inhibitors, beta-blockers, diuretics, and digoxin\n" +
+                 "• Implementing dietary modifications (low sodium, fluid restriction)\n" +
+                 "• Promoting physical activity within tolerance limits\n" +
+                 "• Patient education on medication compliance, symptom monitoring, and lifestyle changes\n" +
+                 "• Psychological support and coping strategies for chronic illness management\n\n" +
+                 "🩺 GASTRIC LAVAGE PROCEDURE DEMONSTRATION:\n" +
+                 "The group then demonstrated the gastric lavage procedure, commonly known as stomach pumping. They explained this emergency procedure used to remove toxic substances from the stomach. Key points covered included:\n\n" +
+                 "• Indications for gastric lavage (drug overdose, poisoning, gastrointestinal bleeding)\n" +
+                 "• Contraindications (ingestion of corrosive substances, hydrocarbons)\n" +
+                 "• Equipment preparation (lavage tube, funnel, warm water, basin)\n" +
+                 "• Patient positioning (left lateral decubitus position)\n" +
+                 "• Step-by-step insertion and lavage technique\n" +
+                 "• Monitoring for complications (aspiration, electrolyte imbalances)\n" +
+                 "• Documentation and post-procedure care\n\n" +
+                 "The group emphasized the importance of proper patient assessment, informed consent, and maintaining patient dignity throughout the procedure. They also highlighted the nurse's role in monitoring for complications and ensuring patient safety.\n\n" +
+                 "Overall, Group B delivered a comprehensive presentation that effectively combined theoretical knowledge with practical clinical skills, demonstrating their competence as future nursing professionals.",
         driveLink: "https://drive.google.com/drive/folders/16DOqhC6myLdX2U18qTCUsjM6fJ050zTm"
     },
     {
         id: "C",
-        topic: "STU - Nursing Dianosis For A Patient With Servere Covid-19 & Practically Demonstrate Rectal Wash-Out And Parenteral Feeding.",
+        topic: "Nursing Diagnosis for Severe COVID-19 & Practical Demonstration of Rectal Wash-Out & Parenteral Feeding",
         members: [
             "Tobore Jeconiah",
             "Nwodu Gift",
@@ -71,7 +127,45 @@ const GROUPS = [
             "Tobore Faithfulness",
             "Hephzibah Ojo Anjolaoluwa"
         ],
-        summary: "STU - Group C – Clinical Demonstration & Case Presentation,Group C presented a practical demonstration of rectal washout and parenteral feeding, showcasing the correct procedures, nursing responsibilities, and essential patient safety measures. The group also discussed the nursing diagnoses and nursing management of a patient with severe COVID-19, emphasizing the application of the nursing process and evidence-based care.The presentation successfully integrated theoretical knowledge with practical skills, enhancing clinical understanding and professional competence in nursing practice.",
+        summary: "📋 GROUP C – CLINICAL DEMONSTRATION & CASE PRESENTATION\n\n" +
+                 "Group C delivered an outstanding and highly practical presentation on Nursing Diagnosis for Severe COVID-19, along with live demonstrations of Rectal Wash-Out and Parenteral Feeding. Their presentation was comprehensive, clinically relevant, and expertly delivered.\n\n" +
+                 "🦠 SEVERE COVID-19 NURSING DIAGNOSIS & MANAGEMENT:\n" +
+                 "The group began by addressing the critical topic of nursing care for patients with severe COVID-19, reflecting the current global health challenges. They discussed the pathophysiology of COVID-19, focusing on the inflammatory response, acute respiratory distress syndrome (ARDS), and multisystem involvement.\n\n" +
+                 "Nursing diagnoses identified included:\n" +
+                 "• Impaired gas exchange related to alveolar inflammation and fluid accumulation\n" +
+                 "• Ineffective breathing pattern related to respiratory muscle fatigue\n" +
+                 "• Risk for infection transmission related to viral shedding\n" +
+                 "• Activity intolerance related to hypoxemia and fatigue\n" +
+                 "• Anxiety related to critical illness and isolation\n" +
+                 "• Imbalanced nutrition: less than body requirements related to increased metabolic demands\n\n" +
+                 "Comprehensive nursing management strategies were discussed:\n" +
+                 "• Monitoring oxygen saturation and implementing oxygen therapy\n" +
+                 "• Positioning strategies (prone positioning for improved oxygenation)\n" +
+                 "• Administration of prescribed medications (antivirals, corticosteroids, anticoagulants)\n" +
+                 "• Fluid and electrolyte management\n" +
+                 "• Prevention of complications (pressure ulcers, deep vein thrombosis)\n" +
+                 "• Psychological support and communication with family members\n" +
+                 "• Strict infection control measures and use of personal protective equipment (PPE)\n" +
+                 "• Patient education on post-COVID recovery and rehabilitation\n\n" +
+                 "🩺 RECTAL WASH-OUT PROCEDURE DEMONSTRATION:\n" +
+                 "The group then demonstrated the rectal wash-out procedure, also known as bowel irrigation. This procedure is used for fecal impaction management or as part of bowel preparation. Key aspects covered included:\n\n" +
+                 "• Indications for rectal wash-out (fecal impaction, constipation, pre-surgical preparation)\n" +
+                 "• Equipment preparation (irrigation set, lubricant, warm water, basin)\n" +
+                 "• Patient positioning and privacy maintenance\n" +
+                 "• Step-by-step insertion and irrigation technique\n" +
+                 "• Monitoring for patient comfort and complications\n" +
+                 "• Post-procedure care and documentation\n\n" +
+                 "💉 PARENTERAL FEEDING (TOTAL PARENTERAL NUTRITION) DEMONSTRATION:\n" +
+                 "The group also demonstrated parenteral feeding, a life-saving intervention for patients unable to receive enteral nutrition. Important points included:\n\n" +
+                 "• Indications for parenteral nutrition (severe malnutrition, gastrointestinal dysfunction, critical illness)\n" +
+                 "• Components of parenteral nutrition solutions (carbohydrates, proteins, lipids, electrolytes, vitamins, minerals)\n" +
+                 "• Central vs. peripheral administration routes\n" +
+                 "• Preparation and administration technique\n" +
+                 "• Monitoring for complications (infection, metabolic disturbances, electrolyte imbalances)\n" +
+                 "• Nursing responsibilities in TPN management and patient monitoring\n\n" +
+                 "🌟 CLOSING REMARKS:\n" +
+                 "Group C successfully integrated theoretical knowledge with practical clinical skills, demonstrating exceptional clinical competence and professional readiness. Their presentation highlighted the importance of evidence-based practice and the application of the nursing process in caring for complex patients. The group's collaborative approach and attention to patient safety were commendable.\n\n" +
+                 "The presentation was a testament to the students' dedication to nursing excellence and their ability to translate theoretical concepts into safe, effective patient care.",
         driveLink: "https://drive.google.com/drive/folders/1xb5pPHe_kzp8j4rv_N6W8GOp4jqFlFQN"
     }
 ];
@@ -335,7 +429,7 @@ if (window.location.pathname.includes('group.html')) {
                         <h4>
                             <span class="icon">📝</span> Presentation Summary
                         </h4>
-                        <p>${group.summary}</p>
+                        <p style="white-space: pre-line; line-height: 1.8;">${group.summary}</p>
                     </div>
 
                     <div class="detail-section detail-section-full">
