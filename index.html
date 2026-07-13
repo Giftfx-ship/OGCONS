@@ -8,7 +8,7 @@
         /* ================================================================
            OGBMOSO COLLEGE OF NURSING SCIENCE
            FOUNDATION OF NURSING PRESENTATION PORTAL
-           ULTIMATE PREMIUM LOGIN PAGE V3
+           ULTIMATE PREMIUM LOGIN PAGE - BLUE BACKGROUND
            ================================================================ */
 
         /* ===== RESET & BASE ===== */
@@ -24,7 +24,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f0f4f8 0%, #dce4ec 25%, #cdd8e4 50%, #bccad8 75%, #aab8c8 100%);
+            background: linear-gradient(135deg, #0a1e33 0%, #1a3a5c 30%, #0f2b4a 60%, #1a3a5c 80%, #0a1e33 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -34,7 +34,7 @@
             overflow-x: hidden;
         }
 
-        /* Animated Gradient Background */
+        /* Animated Background Particles */
         body::before {
             content: '';
             position: fixed;
@@ -43,10 +43,11 @@
             width: 200%;
             height: 200%;
             background: 
-                radial-gradient(ellipse at 20% 30%, rgba(201,168,76,0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 70%, rgba(10,30,51,0.05) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.03) 0%, transparent 70%);
-            animation: floatBg 30s ease-in-out infinite alternate;
+                radial-gradient(2px 2px at 20% 30%, rgba(201,168,76,0.15), transparent),
+                radial-gradient(2px 2px at 40% 70%, rgba(255,255,255,0.05), transparent),
+                radial-gradient(2px 2px at 60% 20%, rgba(201,168,76,0.10), transparent),
+                radial-gradient(2px 2px at 80% 80%, rgba(255,255,255,0.03), transparent);
+            animation: floatParticles 25s ease-in-out infinite alternate;
             z-index: 0;
             pointer-events: none;
         }
@@ -54,25 +55,24 @@
         body::after {
             content: '✦';
             position: fixed;
-            bottom: 3%;
-            right: 3%;
-            font-size: 200px;
-            color: rgba(201,168,76,0.03);
-            transform: rotate(20deg);
+            bottom: 5%;
+            right: 5%;
+            font-size: 180px;
+            color: rgba(201,168,76,0.04);
+            transform: rotate(15deg);
             pointer-events: none;
             animation: floatParticle 35s ease-in-out infinite alternate;
         }
 
-        @keyframes floatBg {
-            0% { transform: translate(0, 0) scale(1) rotate(0deg); }
-            33% { transform: translate(-30px, -20px) scale(1.05) rotate(2deg); }
-            66% { transform: translate(20px, 30px) scale(0.95) rotate(-2deg); }
-            100% { transform: translate(-10px, 10px) scale(1.02) rotate(1deg); }
+        @keyframes floatParticles {
+            0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+            50% { transform: translate(-40px, -30px) rotate(5deg) scale(1.1); }
+            100% { transform: translate(20px, 40px) rotate(-5deg) scale(0.9); }
         }
 
         @keyframes floatParticle {
-            0% { transform: translate(0, 0) rotate(20deg) scale(1); }
-            100% { transform: translate(-50px, -30px) rotate(40deg) scale(1.2); }
+            0% { transform: translate(0, 0) rotate(15deg) scale(1); }
+            100% { transform: translate(-50px, -30px) rotate(35deg) scale(1.2); }
         }
 
         /* Floating Decorations */
@@ -81,15 +81,15 @@
             pointer-events: none;
             z-index: 0;
             font-size: 30px;
-            opacity: 0.06;
+            opacity: 0.05;
             animation: floatDeco 20s ease-in-out infinite alternate;
         }
 
-        .floating-deco:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; font-size: 50px; }
-        .floating-deco:nth-child(2) { top: 70%; left: 3%; animation-delay: 3s; font-size: 40px; }
-        .floating-deco:nth-child(3) { top: 20%; right: 5%; animation-delay: 6s; font-size: 45px; }
-        .floating-deco:nth-child(4) { bottom: 15%; right: 3%; animation-delay: 9s; font-size: 55px; }
-        .floating-deco:nth-child(5) { top: 50%; left: 50%; animation-delay: 12s; font-size: 60px; opacity: 0.03; }
+        .floating-deco:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; font-size: 50px; color: #c9a84c; }
+        .floating-deco:nth-child(2) { top: 70%; left: 3%; animation-delay: 3s; font-size: 40px; color: #fff; }
+        .floating-deco:nth-child(3) { top: 20%; right: 5%; animation-delay: 6s; font-size: 45px; color: #c9a84c; }
+        .floating-deco:nth-child(4) { bottom: 15%; right: 3%; animation-delay: 9s; font-size: 55px; color: #fff; }
+        .floating-deco:nth-child(5) { top: 50%; left: 50%; animation-delay: 12s; font-size: 60px; opacity: 0.03; color: #c9a84c; }
 
         @keyframes floatDeco {
             0% { transform: translate(0, 0) rotate(0deg) scale(1); }
@@ -174,24 +174,9 @@
             100% { background-position: 200% center; }
         }
 
-        @keyframes ripple {
-            0% { transform: scale(0.8); opacity: 0.5; }
-            100% { transform: scale(2); opacity: 0; }
-        }
-
         @keyframes glowPulse {
             0%, 100% { text-shadow: 0 0 10px rgba(201,168,76,0.1); }
             50% { text-shadow: 0 0 30px rgba(201,168,76,0.3), 0 0 60px rgba(201,168,76,0.1); }
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes rotateIn {
-            from { opacity: 0; transform: rotate(-200deg) scale(0.5); }
-            to { opacity: 1; transform: rotate(0deg) scale(1); }
         }
 
         /* ===== LOGIN CONTAINER ===== */
@@ -211,8 +196,8 @@
             padding: 55px 50px 45px;
             border-radius: 35px;
             box-shadow: 
-                0 30px 80px rgba(10, 30, 51, 0.15),
-                0 0 0 1px rgba(201, 168, 76, 0.1),
+                0 30px 80px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(201, 168, 76, 0.15),
                 inset 0 1px 0 rgba(255,255,255,0.9);
             text-align: center;
             transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -251,18 +236,8 @@
         .login-box:hover {
             transform: translateY(-10px) scale(1.008);
             box-shadow: 
-                0 40px 100px rgba(10, 30, 51, 0.2),
+                0 40px 100px rgba(0, 0, 0, 0.35),
                 0 0 0 2px rgba(201, 168, 76, 0.15);
-        }
-
-        /* Ripple Effect on Hover */
-        .login-box .ripple-effect {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(201,168,76,0.05);
-            transform: scale(0);
-            animation: ripple 1s ease-out;
-            pointer-events: none;
         }
 
         /* ===== DECORATIVE CORNERS ===== */
@@ -291,14 +266,14 @@
             max-width: 150px;
             height: auto;
             margin-bottom: 10px;
-            filter: drop-shadow(0 8px 30px rgba(10, 30, 51, 0.12));
+            filter: drop-shadow(0 8px 30px rgba(0, 0, 0, 0.15));
             transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             animation: bounceIn 1.2s ease-out;
         }
 
         .school-logo:hover {
             transform: scale(1.1) rotate(-4deg);
-            filter: drop-shadow(0 15px 40px rgba(10, 30, 51, 0.2));
+            filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.2));
         }
 
         .logo-text {
@@ -309,7 +284,7 @@
             font-family: 'Times New Roman', Georgia, serif;
             position: relative;
             display: inline-block;
-            text-shadow: 0 2px 10px rgba(10,30,51,0.05);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.05);
             animation: scaleIn 0.9s ease-out;
         }
 
@@ -580,7 +555,7 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             animation: slideInRight 0.7s ease-out 0.4s both;
-            box-shadow: 0 4px 20px rgba(10,30,51,0.15);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
 
         #loginBtn::before {
@@ -601,7 +576,7 @@
 
         #loginBtn:hover {
             transform: translateY(-5px) scale(1.015);
-            box-shadow: 0 20px 50px rgba(10, 30, 51, 0.3);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
             background-position: right center;
         }
 
@@ -671,76 +646,161 @@
             flex-shrink: 0;
         }
 
+        /* ================================================================
+           PROFESSIONAL FOOTER - BLUE THEME
+           ================================================================ */
+
         /* ===== FOOTER ===== */
         .footer {
             margin-top: 30px;
             text-align: center;
-            padding: 24px 32px;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(15px);
-            border-radius: 20px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
-            border: 1px solid rgba(201, 168, 76, 0.06);
+            padding: 0;
+            background: linear-gradient(135deg, #0a1e33 0%, #1a3a5c 50%, #0a1e33 100%);
+            border-radius: 22px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
             animation: fadeInUp 0.9s ease-out 0.5s both;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(201,168,76,0.1);
+            overflow: hidden;
         }
 
         .footer:hover {
-            border-color: rgba(201,168,76,0.15);
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 8px 50px rgba(0, 0, 0, 0.3);
             transform: translateY(-2px);
+            border-color: rgba(201,168,76,0.2);
         }
 
-        .footer p {
-            color: #5a6a7e;
+        .footer-content {
+            padding: 25px 35px 20px;
+            position: relative;
+        }
+
+        .footer-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #c9a84c, transparent);
+        }
+
+        .footer-top {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .footer-logo {
+            color: #c9a84c;
+            font-size: 18px;
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+
+        .footer-school {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+            font-family: 'Times New Roman', Georgia, serif;
+            letter-spacing: 3px;
+        }
+
+        .footer-school .gold {
+            color: #c9a84c;
+        }
+
+        .footer-tagline {
+            color: rgba(255,255,255,0.5);
+            font-size: 12px;
+            letter-spacing: 3px;
+            font-weight: 300;
+            margin-top: 2px;
+        }
+
+        .footer-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(201,168,76,0.2), transparent);
+            margin: 8px 0 14px;
+        }
+
+        .footer-middle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-member {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .member-role {
+            color: rgba(255,255,255,0.4);
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .member-name {
+            color: #c9a84c;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .member-phone {
+            color: rgba(255,255,255,0.6);
             font-size: 13px;
-            line-height: 1.9;
-            letter-spacing: 0.3px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 400;
         }
 
-        .footer strong {
-            color: #0a1e33;
-            font-weight: 700;
-        }
-
-        .footer .gold-text {
+        .member-phone:hover {
             color: #c9a84c;
-            font-weight: 700;
+            transform: scale(1.05);
         }
 
-        .footer .divider-dot {
-            color: #c9a84c;
-            opacity: 0.3;
-            margin: 0 8px;
+        .footer-member-divider {
+            width: 1px;
+            height: 40px;
+            background: rgba(201,168,76,0.15);
         }
 
-        .footer .heart {
+        .footer-bottom {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(201,168,76,0.08);
+        }
+
+        .footer-heart {
             color: #e74c3c;
             display: inline-block;
             animation: pulseGlow 1.5s ease-in-out infinite;
+            font-size: 14px;
         }
 
-        .footer .footer-brand {
+        .footer-copyright {
+            color: rgba(255,255,255,0.3);
             font-size: 11px;
-            color: #aab4c4;
-            letter-spacing: 2px;
-            margin-top: 6px;
-        }
-
-        .footer .footer-brand .highlight {
-            color: #c9a84c;
-        }
-
-        .footer .developer-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #0a1e33, #1a3a5c);
-            color: #c9a84c;
-            padding: 3px 16px;
-            border-radius: 14px;
-            font-size: 10px;
-            font-weight: 700;
             letter-spacing: 1px;
-            text-transform: uppercase;
+        }
+
+        .footer-copyright .highlight {
+            color: rgba(201,168,76,0.4);
         }
 
         /* ===== RESPONSIVE ===== */
@@ -814,11 +874,36 @@
             .corner-decoration.br { bottom: 12px; right: 15px; }
 
             .footer {
-                padding: 18px 20px;
+                border-radius: 18px;
             }
 
-            .footer p {
+            .footer-content {
+                padding: 20px 20px 16px;
+            }
+
+            .footer-school {
+                font-size: 17px;
+                letter-spacing: 2px;
+            }
+
+            .footer-middle {
+                gap: 16px;
+            }
+
+            .footer-member-divider {
+                height: 30px;
+            }
+
+            .member-name {
+                font-size: 14px;
+            }
+
+            .member-phone {
                 font-size: 12px;
+            }
+
+            .floating-deco {
+                display: none;
             }
         }
 
@@ -918,21 +1003,6 @@
                 font-size: 20px;
             }
 
-            .footer {
-                padding: 14px 14px;
-                margin-top: 18px;
-                border-radius: 14px;
-            }
-
-            .footer p {
-                font-size: 11px;
-                line-height: 1.6;
-            }
-
-            .footer .footer-brand {
-                font-size: 10px;
-            }
-
             .divider {
                 max-width: 140px;
                 margin: 14px auto;
@@ -945,6 +1015,54 @@
 
             .corner-decoration {
                 display: none;
+            }
+
+            .footer {
+                border-radius: 16px;
+                margin-top: 18px;
+            }
+
+            .footer-content {
+                padding: 16px 14px 14px;
+            }
+
+            .footer-school {
+                font-size: 14px;
+                letter-spacing: 1px;
+            }
+
+            .footer-tagline {
+                font-size: 10px;
+                letter-spacing: 2px;
+            }
+
+            .footer-middle {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .footer-member-divider {
+                display: none;
+            }
+
+            .member-role {
+                font-size: 9px;
+            }
+
+            .member-name {
+                font-size: 13px;
+            }
+
+            .member-phone {
+                font-size: 11px;
+            }
+
+            .footer-copyright {
+                font-size: 9px;
+            }
+
+            .footer-logo {
+                font-size: 14px;
             }
 
             .floating-deco {
@@ -1038,22 +1156,46 @@
             </div>
         </div>
 
-        <!-- Footer -->
-        <div class="footer">
-            <p>
-                <strong>Designed &amp; Developed by:</strong> <span class="gold-text">Dev Gift</span> 
-                <strong>📞</strong> 2349164624021 
-                <span class="divider-dot">|</span>
-                <strong>Creative Direction:</strong> <span class="gold-text">Jeconiah</span> 
-                <strong>📞</strong> 2348143548086
-            </p>
-            <p class="footer-brand">
-                <span class="heart">❤️</span> Excellence in Nursing Education 
-                <span class="heart">❤️</span> 
-                <span class="highlight">✦</span> 
-                <span class="developer-badge">Premium</span>
-            </p>
-        </div>
+        <!-- ============================================================ -->
+        <!-- PROFESSIONAL FOOTER - BLUE THEME                             -->
+        <!-- ============================================================ -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <span class="footer-logo">✦</span>
+                        <span class="footer-school">OGBMOSO COLLEGE <span class="gold">OF NURSING SCIENCE</span></span>
+                        <span class="footer-logo">✦</span>
+                    </div>
+                    <div class="footer-tagline">Excellence in Nursing Education</div>
+                </div>
+
+                <div class="footer-divider"></div>
+
+                <div class="footer-middle">
+                    <div class="footer-member">
+                        <span class="member-role">👨‍💻 Developer</span>
+                        <span class="member-name">Dev Gift</span>
+                        <a href="tel:2349164624021" class="member-phone">📞 2349164624021</a>
+                    </div>
+                    <div class="footer-member-divider"></div>
+                    <div class="footer-member">
+                        <span class="member-role">🎨 Creative Director</span>
+                        <span class="member-name">Jeconiah</span>
+                        <a href="tel:2348143548086" class="member-phone">📞 2348143548086</a>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p class="footer-copyright">
+                        <span class="footer-heart">❤️</span> 
+                        &copy; 2026 Ogbmoso College of Nursing Science. 
+                        <span class="highlight">All Rights Reserved.</span> 
+                        <span class="footer-heart">❤️</span>
+                    </p>
+                </div>
+            </div>
+        </footer>
     </div>
 
     <script src="script.js"></script>
