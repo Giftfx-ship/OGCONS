@@ -12,7 +12,7 @@
 const SCHOOL = {
     name: "OGBMOSO COLLEGE OF NURSING SCIENCE",
     tagline: "Excellence in Nursing Education",
-    logo: "images/logo.png"
+    logo: "images/logo.JPG"
 };
 
 // AUTHORIZED STUDENTS - Add all matric numbers here
