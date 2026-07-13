@@ -32,7 +32,7 @@ const STUDENTS = [
     "25023",
     "25027",
     "25028",
-    "Doc Theophilus"
+    "456720"
 ];
 
 // GROUP PRESENTATIONS
