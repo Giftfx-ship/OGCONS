@@ -8,10 +8,9 @@
         /* ================================================================
            OGBMOSO COLLEGE OF NURSING SCIENCE
            FOUNDATION OF NURSING PRESENTATION PORTAL
-           DASHBOARD PAGE - PREMIUM STYLESHEET
+           ULTIMATE PREMIUM DASHBOARD
            ================================================================ */
 
-        /* ===== RESET & BASE ===== */
         * {
             margin: 0;
             padding: 0;
@@ -24,32 +23,66 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f4f7fc 0%, #e8edf4 100%);
+            background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 40%, #d5dce6 100%);
             min-height: 100vh;
             padding: 20px;
-            animation: fadeIn 0.8s ease-in-out;
+            position: relative;
+        }
+
+        /* Animated Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -30%;
+            right: -20%;
+            width: 60%;
+            height: 80%;
+            background: radial-gradient(ellipse, rgba(201,168,76,0.04) 0%, transparent 70%);
+            pointer-events: none;
+            animation: floatBg 15s ease-in-out infinite alternate;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -30%;
+            left: -20%;
+            width: 60%;
+            height: 80%;
+            background: radial-gradient(ellipse, rgba(10,30,51,0.03) 0%, transparent 70%);
+            pointer-events: none;
+            animation: floatBg 20s ease-in-out infinite alternate-reverse;
+        }
+
+        @keyframes floatBg {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(30px, -20px) scale(1.1); }
         }
 
         /* ===== ANIMATIONS ===== */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes slideUp {
+        @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(40px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes slideDown {
+        @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(201,168,76,0.1); }
+            50% { box-shadow: 0 0 40px rgba(201,168,76,0.2); }
         }
 
         @keyframes shimmer {
@@ -57,23 +90,23 @@
             100% { background-position: 200% center; }
         }
 
-        @keyframes glowBorder {
-            0% { border-color: rgba(201, 168, 76, 0.2); }
-            50% { border-color: rgba(201, 168, 76, 0.6); }
-            100% { border-color: rgba(201, 168, 76, 0.2); }
+        @keyframes floatCard {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
         }
 
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-5px); }
-            100% { transform: translateY(0px); }
+        @keyframes borderPulse {
+            0%, 100% { border-color: rgba(201,168,76,0.15); }
+            50% { border-color: rgba(201,168,76,0.4); }
         }
 
         /* ===== DASHBOARD CONTAINER ===== */
         .dashboard-container {
             width: 100%;
-            max-width: 1300px;
+            max-width: 1350px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         /* ===== NAVBAR ===== */
@@ -82,46 +115,52 @@
             justify-content: space-between;
             align-items: center;
             background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 14px 30px;
-            border-radius: 18px;
-            box-shadow: 0 4px 30px rgba(10, 30, 51, 0.08);
-            margin-bottom: 28px;
+            backdrop-filter: blur(20px);
+            padding: 16px 35px;
+            border-radius: 22px;
+            box-shadow: 0 8px 40px rgba(10, 30, 51, 0.08);
+            margin-bottom: 30px;
             flex-wrap: wrap;
             gap: 12px;
-            border-left: 5px solid #c9a84c;
-            animation: slideDown 0.6s ease-out;
-            transition: all 0.3s ease;
+            border-left: 6px solid #c9a84c;
+            animation: fadeInDown 0.6s ease-out;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(201,168,76,0.08);
         }
 
         .navbar:hover {
-            box-shadow: 0 8px 40px rgba(10, 30, 51, 0.12);
+            box-shadow: 0 12px 50px rgba(10, 30, 51, 0.12);
         }
 
         .nav-left {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 16px;
         }
 
         .nav-logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .nav-logo img {
-            max-height: 42px;
+            max-height: 45px;
             width: auto;
-            filter: drop-shadow(0 2px 8px rgba(10, 30, 51, 0.08));
+            filter: drop-shadow(0 2px 10px rgba(10, 30, 51, 0.08));
+            transition: transform 0.3s ease;
+        }
+
+        .nav-logo img:hover {
+            transform: rotate(-5deg) scale(1.05);
         }
 
         .nav-school {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 900;
             color: #0a1e33;
             font-family: 'Times New Roman', Georgia, serif;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
         }
 
         .nav-school .gold {
@@ -130,15 +169,18 @@
 
         .nav-divider {
             color: #dce4ec;
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 300;
         }
 
         .nav-title {
             color: #5a6a7e;
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 500;
             letter-spacing: 0.5px;
+            padding: 4px 12px;
+            background: rgba(201,168,76,0.06);
+            border-radius: 8px;
         }
 
         .nav-title .highlight {
@@ -149,7 +191,7 @@
         .nav-right {
             display: flex;
             align-items: center;
-            gap: 18px;
+            gap: 20px;
             flex-wrap: wrap;
         }
 
@@ -157,10 +199,16 @@
             color: #1a3a5c;
             font-size: 14px;
             font-weight: 500;
-            padding: 6px 16px;
-            background: #f4f7fc;
-            border-radius: 20px;
+            padding: 8px 20px;
+            background: linear-gradient(135deg, #f4f7fc, #e8edf4);
+            border-radius: 30px;
             border: 1px solid #e0e6ed;
+            transition: all 0.3s ease;
+        }
+
+        .nav-welcome:hover {
+            border-color: #c9a84c;
+            background: white;
         }
 
         .nav-welcome strong {
@@ -173,115 +221,138 @@
         }
 
         .logout-btn {
-            padding: 9px 24px;
+            padding: 10px 28px;
             background: linear-gradient(135deg, #e74c3c, #c0392b);
             color: white;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             font-size: 14px;
             font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             letter-spacing: 0.5px;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
+            text-transform: uppercase;
+            font-size: 13px;
         }
 
         .logout-btn:hover {
-            transform: translateY(-2px) scale(1.03);
-            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.35);
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 35px rgba(231, 76, 60, 0.35);
         }
 
         .logout-btn:active {
-            transform: translateY(0);
+            transform: translateY(0) scale(0.97);
         }
 
         /* ===== MAIN CONTENT ===== */
         .main-content {
             background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(8px);
-            border-radius: 20px;
-            padding: 35px;
-            box-shadow: 0 4px 30px rgba(10, 30, 51, 0.06);
+            backdrop-filter: blur(12px);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 8px 40px rgba(10, 30, 51, 0.06);
             min-height: 60vh;
-            animation: slideUp 0.7s ease-out;
-            border: 1px solid rgba(201, 168, 76, 0.08);
+            animation: fadeInUp 0.7s ease-out;
+            border: 1px solid rgba(201, 168, 76, 0.06);
         }
 
         .main-content:hover {
-            box-shadow: 0 8px 40px rgba(10, 30, 51, 0.08);
+            box-shadow: 0 12px 50px rgba(10, 30, 51, 0.08);
         }
 
         /* ===== PAGE HEADER ===== */
         .page-header {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #f0f2f5;
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid rgba(201,168,76,0.1);
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 15px;
         }
 
         .page-header-left h1 {
             color: #0a1e33;
-            font-size: 30px;
-            font-weight: 800;
+            font-size: 34px;
+            font-weight: 900;
             letter-spacing: -0.5px;
+            animation: slideInLeft 0.6s ease-out;
         }
 
         .page-header-left h1 .gold {
             color: #c9a84c;
+            position: relative;
+        }
+
+        .page-header-left h1 .gold::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, #c9a84c, transparent);
+            border-radius: 2px;
         }
 
         .page-header-left p {
             color: #5a6a7e;
-            font-size: 15px;
-            margin-top: 4px;
+            font-size: 16px;
+            margin-top: 6px;
             font-weight: 400;
         }
 
         .page-header-right {
             display: flex;
             align-items: center;
-            gap: 10px;
-            padding: 8px 16px;
-            background: #f4f7fc;
-            border-radius: 12px;
+            gap: 12px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #f4f7fc, #e8edf4);
+            border-radius: 16px;
             border: 1px solid #e0e6ed;
+            animation: scaleIn 0.6s ease-out 0.3s both;
         }
 
         .page-header-right .count {
             font-size: 14px;
             color: #5a6a7e;
+            font-weight: 500;
         }
 
         .page-header-right .count strong {
             color: #0a1e33;
-            font-size: 18px;
+            font-size: 22px;
+            font-weight: 900;
+        }
+
+        .page-header-right .count .gold-number {
+            color: #c9a84c;
         }
 
         /* ===== GROUPS GRID ===== */
         .groups-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 28px;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
         }
 
         /* ===== GROUP CARD ===== */
         .group-card {
             background: #f8fafc;
-            border-radius: 18px;
-            padding: 28px 25px 25px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: 22px;
+            padding: 30px 28px 25px;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 2px solid transparent;
             cursor: pointer;
             position: relative;
             overflow: hidden;
-            animation: slideUp 0.7s ease-out;
+            animation: fadeInUp 0.7s ease-out;
             animation-fill-mode: both;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
         }
 
         .group-card:nth-child(1) { animation-delay: 0.1s; }
@@ -294,11 +365,12 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 5px;
+            height: 6px;
             background: linear-gradient(to right, #c9a84c, #0a1e33, #c9a84c);
             background-size: 200% auto;
             transform: scaleX(0);
-            transition: transform 0.5s ease;
+            transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-origin: left;
         }
 
         .group-card:hover::before {
@@ -306,62 +378,99 @@
             animation: shimmer 2s linear infinite;
         }
 
+        .group-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(201,168,76,0.02) 0%, transparent 70%);
+            pointer-events: none;
+            transition: all 0.6s ease;
+        }
+
+        .group-card:hover::after {
+            transform: scale(1.5);
+        }
+
         .group-card:hover {
-            transform: translateY(-8px) scale(1.01);
+            transform: translateY(-10px) scale(1.01);
             border-color: #c9a84c;
-            box-shadow: 0 20px 60px rgba(10, 30, 51, 0.12);
+            box-shadow: 0 25px 70px rgba(10, 30, 51, 0.12);
             background: white;
         }
 
         .group-card:active {
-            transform: translateY(-4px) scale(0.99);
+            transform: translateY(-5px) scale(0.98);
         }
 
         /* Card Badge */
         .group-badge {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             background: linear-gradient(135deg, #0a1e33, #1a3a5c);
             color: #c9a84c;
-            padding: 4px 18px;
-            border-radius: 20px;
-            font-size: 14px;
+            padding: 6px 22px;
+            border-radius: 30px;
+            font-size: 15px;
             font-weight: 800;
-            letter-spacing: 1.5px;
-            margin-bottom: 14px;
+            letter-spacing: 2px;
             text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 4px 15px rgba(10,30,51,0.1);
         }
 
         .group-badge .icon {
-            font-size: 16px;
+            font-size: 18px;
+        }
+
+        /* Card Number */
+        .group-card .card-number {
+            position: absolute;
+            top: 12px;
+            right: 20px;
+            font-size: 56px;
+            font-weight: 900;
+            color: rgba(10, 30, 51, 0.03);
+            font-family: 'Times New Roman', Georgia, serif;
+            pointer-events: none;
+            z-index: 0;
         }
 
         /* Card Content */
         .group-card h3 {
             color: #0a1e33;
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 800;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
             letter-spacing: -0.3px;
+            position: relative;
+            z-index: 1;
         }
 
         .group-topic {
             color: #1a3a5c;
             font-size: 15px;
             font-weight: 600;
-            margin-bottom: 14px;
-            padding: 4px 12px;
+            margin-bottom: 16px;
+            padding: 4px 16px;
             background: rgba(201, 168, 76, 0.08);
-            border-radius: 6px;
+            border-radius: 8px;
             display: inline-block;
+            position: relative;
+            z-index: 1;
         }
 
         .group-members {
             color: #5a6a7e;
             font-size: 14px;
-            line-height: 1.8;
-            margin-bottom: 16px;
+            line-height: 1.9;
+            margin-bottom: 18px;
+            position: relative;
+            z-index: 1;
         }
 
         .group-members strong {
@@ -371,10 +480,10 @@
 
         .group-members .member-count {
             display: inline-block;
-            background: #e8edf4;
-            color: #0a1e33;
-            padding: 0 10px;
-            border-radius: 10px;
+            background: linear-gradient(135deg, #0a1e33, #1a3a5c);
+            color: #c9a84c;
+            padding: 0 12px;
+            border-radius: 12px;
             font-size: 12px;
             font-weight: 700;
             margin-left: 4px;
@@ -385,30 +494,33 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 4px;
+            gap: 12px;
+            margin-top: 6px;
+            position: relative;
+            z-index: 1;
         }
 
         .group-drive-btn {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 11px 24px;
+            gap: 10px;
+            padding: 12px 28px;
             background: linear-gradient(135deg, #0a1e33, #1a3a5c);
             color: white;
             border: none;
-            border-radius: 12px;
+            border-radius: 14px;
             font-size: 14px;
             font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-decoration: none;
             letter-spacing: 0.3px;
+            box-shadow: 0 4px 15px rgba(10,30,51,0.1);
         }
 
         .group-drive-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(10, 30, 51, 0.3);
+            box-shadow: 0 12px 35px rgba(10, 30, 51, 0.3);
             background: linear-gradient(135deg, #1a3a5c, #0a1e33);
         }
 
@@ -417,7 +529,7 @@
         }
 
         .group-drive-btn:hover .arrow {
-            transform: translateX(4px);
+            transform: translateX(6px);
         }
 
         .group-photo-count {
@@ -425,35 +537,27 @@
             font-size: 13px;
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 6px;
+            padding: 4px 12px;
+            background: rgba(201,168,76,0.06);
+            border-radius: 20px;
         }
 
         .group-photo-count .icon {
             font-size: 16px;
         }
 
-        /* Card Decorative Elements */
-        .group-card .card-number {
-            position: absolute;
-            top: 12px;
-            right: 18px;
-            font-size: 48px;
-            font-weight: 900;
-            color: rgba(10, 30, 51, 0.04);
-            font-family: 'Times New Roman', Georgia, serif;
-            pointer-events: none;
-        }
-
         /* ===== FOOTER ===== */
         .footer {
-            margin-top: 28px;
+            margin-top: 30px;
             text-align: center;
-            padding: 20px 30px;
+            padding: 22px 35px;
             background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(8px);
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-            border: 1px solid rgba(201, 168, 76, 0.08);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(201, 168, 76, 0.06);
+            animation: fadeInUp 0.8s ease-out 0.4s both;
         }
 
         .footer p {
@@ -475,13 +579,20 @@
         .footer .divider-dot {
             color: #c9a84c;
             opacity: 0.4;
-            margin: 0 6px;
+            margin: 0 8px;
         }
 
         .footer .heart {
             color: #e74c3c;
             display: inline-block;
-            animation: pulse 1.5s ease-in-out infinite;
+            animation: pulseGlow 1.5s ease-in-out infinite;
+        }
+
+        .footer .footer-brand {
+            font-size: 11px;
+            color: #aab4c4;
+            letter-spacing: 2px;
+            margin-top: 4px;
         }
 
         /* ===== RESPONSIVE ===== */
@@ -497,11 +608,11 @@
             }
 
             .navbar {
-                padding: 12px 20px;
-                border-radius: 14px;
+                padding: 14px 22px;
+                border-radius: 18px;
                 flex-direction: column;
                 align-items: stretch;
-                gap: 10px;
+                gap: 12px;
             }
 
             .nav-left {
@@ -522,12 +633,12 @@
             }
 
             .nav-school {
-                font-size: 17px;
+                font-size: 18px;
             }
 
             .main-content {
-                padding: 22px 18px;
-                border-radius: 16px;
+                padding: 25px 20px;
+                border-radius: 18px;
             }
 
             .page-header {
@@ -536,24 +647,26 @@
             }
 
             .page-header-left h1 {
-                font-size: 24px;
+                font-size: 26px;
             }
 
             .groups-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
+                gap: 22px;
             }
 
             .group-card {
-                padding: 22px 18px;
+                padding: 24px 20px;
+                border-radius: 18px;
             }
 
             .group-card h3 {
-                font-size: 19px;
+                font-size: 20px;
             }
 
             .group-card .card-number {
-                font-size: 36px;
+                font-size: 40px;
+                right: 14px;
             }
 
             .footer p {
@@ -562,12 +675,12 @@
 
             .nav-welcome {
                 font-size: 13px;
-                padding: 4px 12px;
+                padding: 6px 14px;
             }
 
             .logout-btn {
-                font-size: 13px;
-                padding: 7px 18px;
+                font-size: 12px;
+                padding: 8px 20px;
             }
         }
 
@@ -578,7 +691,7 @@
 
             .navbar {
                 padding: 10px 14px;
-                border-radius: 12px;
+                border-radius: 14px;
                 border-left-width: 4px;
             }
 
@@ -587,17 +700,17 @@
             }
 
             .nav-school {
-                font-size: 14px;
+                font-size: 15px;
             }
 
             .main-content {
-                padding: 16px 12px;
+                padding: 18px 14px;
                 border-radius: 14px;
             }
 
             .page-header {
-                margin-bottom: 18px;
-                padding-bottom: 14px;
+                margin-bottom: 20px;
+                padding-bottom: 16px;
             }
 
             .page-header-left h1 {
@@ -609,21 +722,26 @@
             }
 
             .page-header-right {
-                padding: 4px 12px;
+                padding: 6px 14px;
             }
 
             .page-header-right .count {
                 font-size: 12px;
             }
 
+            .page-header-right .count strong {
+                font-size: 18px;
+            }
+
             .group-card {
                 padding: 18px 14px;
-                border-radius: 14px;
+                border-radius: 16px;
             }
 
             .group-badge {
                 font-size: 12px;
-                padding: 3px 14px;
+                padding: 4px 16px;
+                letter-spacing: 1px;
             }
 
             .group-card h3 {
@@ -632,7 +750,7 @@
 
             .group-topic {
                 font-size: 13px;
-                padding: 3px 10px;
+                padding: 3px 12px;
             }
 
             .group-members {
@@ -642,7 +760,7 @@
 
             .group-drive-btn {
                 font-size: 13px;
-                padding: 9px 18px;
+                padding: 10px 20px;
                 width: 100%;
                 justify-content: center;
             }
@@ -650,17 +768,27 @@
             .group-card .card-number {
                 font-size: 28px;
                 top: 8px;
-                right: 12px;
+                right: 10px;
             }
 
             .footer {
                 padding: 14px 16px;
                 margin-top: 18px;
+                border-radius: 14px;
             }
 
             .footer p {
                 font-size: 11px;
                 line-height: 1.6;
+            }
+
+            .footer .footer-brand {
+                font-size: 10px;
+            }
+
+            .group-photo-count {
+                font-size: 12px;
+                padding: 3px 10px;
             }
         }
     </style>
@@ -691,10 +819,10 @@
             <div class="page-header">
                 <div class="page-header-left">
                     <h1>📋 Presentation <span class="gold">Groups</span></h1>
-                    <p>Explore the presentations from each group — click a card to view details</p>
+                    <p>Explore the presentations from each group — click any card to view details</p>
                 </div>
                 <div class="page-header-right">
-                    <span class="count">🎯 <strong id="groupCount">3</strong> Groups</span>
+                    <span class="count">🎯 <strong id="groupCount">3</strong> <span class="gold-number">Groups</span></span>
                 </div>
             </div>
 
@@ -710,9 +838,10 @@
                 <strong>📞</strong> 2349164624021 
                 <span class="divider-dot">|</span>
                 <strong>Creative Direction:</strong> Jeconaih <span class="gold-text">✦</span> 
-                <strong>📞</strong> 080XXXXXXXX 
-                <span class="divider-dot">|</span>
-                <span class="heart">❤️</span> Excellence in Nursing Education
+                <strong>📞</strong> 080XXXXXXXX
+            </p>
+            <p class="footer-brand">
+                <span class="heart">❤️</span> Excellence in Nursing Education <span class="heart">❤️</span>
             </p>
         </div>
     </div>
