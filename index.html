@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Ogbmoso College of Nursing Science</title>
+    <style>
+        /* ================================================================
+           OGBMOSO COLLEGE OF NURSING SCIENCE
+           FOUNDATION OF NURSING PRESENTATION PORTAL
+           LOGIN PAGE - PREMIUM STYLESHEET
+           ================================================================ */
+
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f4f7fc 0%, #e8edf4 50%, #dce4ec 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: fadeIn 0.8s ease-in-out;
+            position: relative;
+        }
+
+        /* Background Decorative Elements */
+        body::before {
+            content: '✧';
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            font-size: 120px;
+            color: rgba(201, 168, 76, 0.06);
+            transform: rotate(-15deg);
+        }
+
+        body::after {
+            content: '✧';
+            position: absolute;
+            bottom: 5%;
+            right: 5%;
+            font-size: 150px;
+            color: rgba(201, 168, 76, 0.06);
+            transform: rotate(20deg);
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-30px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes glowPulse {
+            0% { box-shadow: 0 0 20px rgba(201, 168, 76, 0.2); }
+            50% { box-shadow: 0 0 40px rgba(201, 168, 76, 0.5); }
+            100% { box-shadow: 0 0 20px rgba(201, 168, 76, 0.2); }
+        }
+
+        @keyframes borderGlow {
+            0% { border-color: rgba(201, 168, 76, 0.3); }
+            50% { border-color: rgba(201, 168, 76, 0.8); }
+            100% { border-color: rgba(201, 168, 76, 0.3); }
+        }
+
+        /* ===== LOGIN CONTAINER ===== */
+        .login-container {
+            width: 100%;
+            max-width: 480px;
+            padding: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== LOGIN BOX ===== */
+        .login-box {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 50px 45px 40px;
+            border-radius: 24px;
+            box-shadow: 
+                0 25px 80px rgba(10, 30, 51, 0.15),
+                0 0 0 1px rgba(201, 168, 76, 0.1);
+            text-align: center;
+            transition: all 0.4s ease;
+            border-top: 6px solid #c9a84c;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 20%, rgba(201, 168, 76, 0.03) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .login-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 35px 100px rgba(10, 30, 51, 0.2),
+                0 0 0 2px rgba(201, 168, 76, 0.2);
+        }
+
+        /* ===== LOGO SECTION ===== */
+        .logo-wrapper {
+            margin-bottom: 18px;
+            position: relative;
+        }
+
+        .school-logo {
+            max-width: 120px;
+            height: auto;
+            margin-bottom: 8px;
+            filter: drop-shadow(0 4px 12px rgba(10, 30, 51, 0.1));
+            transition: transform 0.4s ease;
+        }
+
+        .school-logo:hover {
+            transform: scale(1.05) rotate(-2deg);
+        }
+
+        .logo-text {
+            font-size: 48px;
+            font-weight: 900;
+            color: #0a1e33;
+            letter-spacing: 4px;
+            font-family: 'Times New Roman', Georgia, serif;
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo-text::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #c9a84c, #0a1e33);
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        .logo-text .gold-dot {
+            color: #c9a84c;
+        }
+
+        /* ===== SCHOOL NAME ===== */
+        .school-name {
+            font-family: 'Times New Roman', Georgia, serif;
+            font-size: 26px;
+            font-weight: 900;
+            color: #0a1e33;
+            letter-spacing: 3px;
+            line-height: 1.2;
+            margin-top: 5px;
+        }
+
+        .school-name .gold {
+            color: #c9a84c;
+            display: block;
+            font-size: 20px;
+            letter-spacing: 6px;
+            font-weight: 700;
+        }
+
+        .tagline {
+            color: #c9a84c;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            margin: 5px 0 12px;
+            font-style: italic;
+        }
+
+        .tagline .ornament {
+            color: #0a1e33;
+            opacity: 0.3;
+        }
+
+        /* ===== DIVIDER ===== */
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 18px auto;
+            max-width: 200px;
+        }
+
+        .divider .line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #c9a84c, transparent);
+        }
+
+        .divider .diamond {
+            color: #c9a84c;
+            font-size: 14px;
+        }
+
+        /* ===== TITLE SECTION ===== */
+        .login-title {
+            color: #0a1e33;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .login-title .highlight {
+            color: #c9a84c;
+        }
+
+        .login-subtitle {
+            color: #5a6a7e;
+            font-size: 14px;
+            margin: 4px 0 25px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== FORM ===== */
+        .input-group {
+            text-align: left;
+            margin-bottom: 22px;
+        }
+
+        .input-group label {
+            display: block;
+            color: #0a1e33;
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 7px;
+            letter-spacing: 0.5px;
+        }
+
+        .input-group label .required {
+            color: #c9a84c;
+            margin-left: 2px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e0e6ed;
+            border-radius: 14px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: #f8fafc;
+            color: #0a1e33;
+            font-weight: 500;
+        }
+
+        .input-group input::placeholder {
+            color: #aab4c4;
+            font-weight: 400;
+        }
+
+        .input-group input:focus {
+            border-color: #c9a84c;
+            background: white;
+            outline: none;
+            box-shadow: 0 0 0 5px rgba(201, 168, 76, 0.12);
+            transform: scale(1.01);
+        }
+
+        .input-group input:hover {
+            border-color: #b89a3c;
+            background: white;
+        }
+
+        /* ===== LOGIN BUTTON ===== */
+        #loginBtn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #0a1e33 0%, #1a3a5c 50%, #0a1e33 100%);
+            background-size: 200% auto;
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 1px;
+        }
+
+        #loginBtn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(10, 30, 51, 0.35);
+            background-position: right center;
+        }
+
+        #loginBtn:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(10, 30, 51, 0.2);
+        }
+
+        #loginBtn .btn-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        #loginBtn .btn-loader {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .spinner {
+            width: 22px;
+            height: 22px;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            border-top-color: #c9a84c;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* ===== ERROR MESSAGE ===== */
+        .error {
+            color: #e74c3c;
+            background: linear-gradient(135deg, #fde8e8, #fff5f5);
+            padding: 14px 18px;
+            border-radius: 12px;
+            margin-top: 18px;
+            font-size: 14px;
+            font-weight: 600;
+            border-left: 5px solid #e74c3c;
+            animation: fadeIn 0.4s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .error .icon {
+            font-size: 20px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            margin-top: 25px;
+            text-align: center;
+            padding: 18px 25px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border-radius: 14px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(201, 168, 76, 0.1);
+        }
+
+        .footer p {
+            color: #5a6a7e;
+            font-size: 13px;
+            line-height: 1.8;
+            letter-spacing: 0.3px;
+        }
+
+        .footer strong {
+            color: #0a1e33;
+            font-weight: 700;
+        }
+
+        .footer .gold-text {
+            color: #c9a84c;
+        }
+
+        .footer .divider-dot {
+            color: #c9a84c;
+            opacity: 0.5;
+            margin: 0 5px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .login-box {
+                padding: 35px 25px 30px;
+                border-radius: 20px;
+            }
+
+            .logo-text {
+                font-size: 36px;
+                letter-spacing: 3px;
+            }
+
+            .school-name {
+                font-size: 20px;
+                letter-spacing: 2px;
+            }
+
+            .school-name .gold {
+                font-size: 16px;
+                letter-spacing: 4px;
+            }
+
+            .login-title {
+                font-size: 18px;
+            }
+
+            .input-group input {
+                padding: 13px 16px;
+                font-size: 15px;
+            }
+
+            #loginBtn {
+                font-size: 16px;
+                padding: 14px;
+            }
+
+            .footer p {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .login-box {
+                padding: 25px 16px 22px;
+                border-radius: 16px;
+                border-top-width: 4px;
+            }
+
+            .logo-text {
+                font-size: 28px;
+                letter-spacing: 2px;
+            }
+
+            .logo-text::after {
+                width: 50px;
+                height: 3px;
+            }
+
+            .school-name {
+                font-size: 16px;
+                letter-spacing: 1px;
+            }
+
+            .school-name .gold {
+                font-size: 13px;
+                letter-spacing: 3px;
+            }
+
+            .tagline {
+                font-size: 11px;
+                letter-spacing: 2px;
+            }
+
+            .login-title {
+                font-size: 16px;
+            }
+
+            .login-subtitle {
+                font-size: 12px;
+                margin-bottom: 18px;
+            }
+
+            .input-group {
+                margin-bottom: 16px;
+            }
+
+            .input-group label {
+                font-size: 13px;
+            }
+
+            .input-group input {
+                padding: 12px 14px;
+                font-size: 14px;
+                border-radius: 12px;
+            }
+
+            #loginBtn {
+                font-size: 15px;
+                padding: 13px;
+                border-radius: 12px;
+            }
+
+            .error {
+                font-size: 13px;
+                padding: 11px 14px;
+            }
+
+            .footer {
+                padding: 14px 16px;
+                margin-top: 18px;
+            }
+
+            .footer p {
+                font-size: 11px;
+                line-height: 1.6;
+            }
+
+            .divider {
+                max-width: 140px;
+                margin: 14px auto;
+            }
+        }
+
+        /* ===== ADDITIONAL DECORATIVE TOUCHES ===== */
+        .decorative-line {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(201, 168, 76, 0.3), transparent);
+            margin: 8px 0 12px;
+        }
+
+        .matric-hint {
+            font-size: 12px;
+            color: #aab4c4;
+            margin-top: 4px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="login-box">
+            <!-- School Logo -->
+            <div class="logo-wrapper">
+                <img src="images/logo.png" alt="Ogbmoso College of Nursing Science" class="school-logo" onerror="this.style.display='none'" />
+                <div class="logo-text">OCNS<span class="gold-dot">✦</span></div>
+            </div>
+
+            <!-- School Name -->
+            <div class="school-name">
+                OGBMOSO COLLEGE
+                <span class="gold">OF NURSING SCIENCE</span>
+            </div>
+
+            <p class="tagline">
+                <span class="ornament">✦</span> Excellence in Nursing Education <span class="ornament">✦</span>
+            </p>
+
+            <div class="divider">
+                <span class="line"></span>
+                <span class="diamond">◆</span>
+                <span class="line"></span>
+            </div>
+
+            <h3 class="login-title">
+                Foundation of <span class="highlight">Nursing</span>
+            </h3>
+            <p class="login-subtitle">Presentation Gallery — Class of 2026</p>
+
+            <div class="decorative-line"></div>
+
+            <!-- Login Form -->
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="matricInput">
+                        Matric Number <span class="required">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="matricInput" 
+                        placeholder="Enter your Matric Number e.g. NSG2024001" 
+                        required 
+                        autofocus
+                    />
+                    <div class="matric-hint">Enter Your Matric Number</div>
+                </div>
+
+                <button type="submit" id="loginBtn">
+                    <span class="btn-text">🔐 Access Presentation Gallery</span>
+                    <span class="btn-loader hidden">
+                        <span class="spinner"></span> Authenticating...
+                    </span>
+                </button>
+            </form>
+
+            <div id="errorMsg" class="error hidden">
+                <span class="icon">❌</span>
+                <span>Invalid Matric Number. Please check and try again.</span>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>
+                <strong>Designed &amp; Developed by:</strong> Gift <span class="gold-text">✦</span> 
+                <strong>📞</strong> 2349164624021 
+                <span class="divider-dot">|</span>
+                <strong>Creative Direction:</strong> Jeconaih <span class="gold-text">✦</span> 
+                <strong>📞</strong> 080XXXXXXXX
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
